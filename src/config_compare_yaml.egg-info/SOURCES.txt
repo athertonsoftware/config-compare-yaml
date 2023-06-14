@@ -1,0 +1,10 @@
+README.md
+setup.py
+src/config_compare_yaml/__init__.py
+src/config_compare_yaml/main.py
+src/config_compare_yaml.egg-info/PKG-INFO
+src/config_compare_yaml.egg-info/SOURCES.txt
+src/config_compare_yaml.egg-info/dependency_links.txt
+src/config_compare_yaml.egg-info/entry_points.txt
+src/config_compare_yaml.egg-info/requires.txt
+src/config_compare_yaml.egg-info/top_level.txt

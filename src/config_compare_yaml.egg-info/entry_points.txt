@@ -1,0 +1,2 @@
+[console_scripts]
+config_compare_yaml = config_compare_yaml.main:main
