@@ -14,9 +14,10 @@ The developer's custom “config.yaml” file is never checked into the reposito
 the “config-sample.yaml” file is always checked into the repository. When a developer 
 makes a change to the “config.yaml” file with a new key value, they often neglect to 
 include it in the “config-sample.yaml” file. Following that, they commit all of their 
-changes to the repository. Then, when you pull down their changes and build the 
-application, you will get an error message that says "unknown property" or 
-"property not found". Config-compare is utilized to prevent this situation.
+changes to the repository. Then, when another developer pulls down their changes and 
+builds the application, the developer will get an error message that says 
+"unknown property" or "property not found". Config-compare is utilized to prevent 
+this situation.
 
 # Description:
 This pre-commit hook will compare two YAML configuration files. The comparison takes 
@@ -47,7 +48,7 @@ config-compare
 ## pre-commit
 If you want to run it from Github use this configuration
 ```yaml
- - repo: https://github.com/akocs/config-compare-yaml
+ - repo: https://github.com/athertonsoftware/config-compare-yaml
     rev: main
     hooks:
       - id: config-compare-yaml
