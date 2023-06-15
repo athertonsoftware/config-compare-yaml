@@ -47,17 +47,23 @@ config-compare
 
 ## pre-commit
 If you want to run it from Github use this configuration
+If the files are not next to the .pre-commit-config.yaml file than you need to add the 
+path to file1 and file2. Do not start with a slash in the file path. 
+For Example: 
+
+    "--file1=src/config.yaml",
+    "--file2=src/config-sample.yaml",
+
 ```yaml
  - repo: https://github.com/athertonsoftware/config-compare-yaml
-    rev: main
+    rev: v0.0.3
     hooks:
       - id: config-compare-yaml
         additional_dependencies: [pyyaml]
         always_run: true
         args:
           [
-            "--file1=config.yaml",
-            "--file2=config-sample.yaml",
+            "--file1=<path-to-file/>config.yaml",
+            "--file2=<path-to-file/>config-sample.yaml",
           ]
 ```
-
