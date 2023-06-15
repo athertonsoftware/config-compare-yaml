@@ -9,8 +9,8 @@ file that does not get checked into GIT. The other YAML file, --file2, will be
 the sample configuration file that does get checked into GIT. If your config files are
 in a directory, just pull in the path to the files relative to the top directory
 
-- repo: https://github.com/akocs/config-compare-yaml
-    rev: main
+- repo: https://github.com/athertonsoftware/config-compare-yaml
+    rev: v0.0.3
     hooks:
       - id: config-compare-yaml
         name: config-compare-yaml
@@ -20,8 +20,8 @@ in a directory, just pull in the path to the files relative to the top directory
         additional_dependencies: [pyyaml]
         args:
           [
-            "--file1=config.yaml",
-            "--file2=config-sample.yaml",
+            "--file1=<path-to-file/>config.yaml",
+            "--file2=<path-to-file/>config-sample.yaml",
           ]
 
 or to run it locally from the .git/hooks directory
@@ -34,11 +34,11 @@ or to run it locally from the .git/hooks directory
         language: python
         language_version: 3.8.6
         additional_dependencies: [pyyaml]
-        entry: python .git/hooks/configcompare.py
+        entry: python .git/hooks/configcompareyaml.py
         args:
           [
-            "--file1=config.yaml",
-            "--file2=config-sample.yaml",
+            "--file1=<path-to-file/>config.yaml",
+            "--file2=<path-to-file/>config-sample.yaml",
           ]
 
 """
