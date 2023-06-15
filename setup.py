@@ -6,15 +6,15 @@ with open('README.md', encoding='utf-8') as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name='config_compare_yaml',
+    name='config-compare-yaml',
     author='Tony Akocs',
     author_email='tony.akocs@gmail.com',
     description="""Compare the projects sample config keys to developers config file.""",  # noqa: E501
     long_description=long_description,
     long_description_content_type='text/markdown',
-    url='https://github.com/akocs/config_compare_yaml',
+    url='https://github.com/athertonsoftware/config-compare-yaml',
     project_urls={
-        'Bug Tracker': 'https://github.com/akocs/config_compare_yaml/issues',  # noqa: E501
+        'Bug Tracker': 'https://github.com/athertonsoftware/config-compare-yaml/issues',  # noqa: E501
     },
     package_dir={'': 'src'},
     packages=setuptools.find_packages(where='src'),
@@ -24,7 +24,7 @@ setuptools.setup(
     python_requires='>=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*',
     entry_points={
         'console_scripts': [
-            'config_compare_yaml = config_compare_yaml.main:main',
+            'config-compare-yaml = config-compare-yaml.main:main',
         ],
     },
     license='MIT',
