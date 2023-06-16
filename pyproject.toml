@@ -15,12 +15,10 @@ authors = [
 ]
 license = {text = "LICENSE"}
 readme = "README.md"
-repository = "https://github.com/athertonsoftware/config-compare-yaml"
 keywords = ["config compare", "YAML"]
 
 [project.urls]
-"Homepage" = "https://github.com/athertonsoftware/config-compare-yaml"
-"Bug Tracker" = "https://github.com/athertonsoftware/config-compare-yaml/issues"
+Repository = "https://github.com/athertonsoftware/config-compare-yaml"
 
 [tool.setuptools_scm]
 write_to= "version.txt"
