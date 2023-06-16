@@ -6,6 +6,22 @@ requires = [
 ]
 build-backend = "setuptools.build_meta"
 
+[project]
+name = "config-compare-yaml"
+version = "0.0.3"
+description = "Compare a global config.yaml file with the developers version to make sure that the keys match during checkin"
+authors = [
+  { name="Tony Akocs", email="tony.akocs@athertonsoftware.com" },
+]
+license = "Apache-2.0"
+readme = "README.md"
+repository = "https://github.com/athertonsoftware/config-compare-yaml"
+keywords = ["config compare", "YAML"]
+
+[project.urls]
+"Homepage" = "https://github.com/athertonsoftware/config-compare-yaml"
+"Bug Tracker" = "https://github.com/athertonsoftware/config-compare-yaml/issues"
+
 [tool.setuptools_scm]
 write_to= "version.txt"
 version_scheme= "release-branch-semver"

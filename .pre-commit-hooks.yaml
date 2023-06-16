@@ -5,3 +5,4 @@
   entry: config-compare-yaml
   language: python
   types: [python]
+  require_serial: true
