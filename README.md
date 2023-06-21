@@ -56,7 +56,7 @@ For Example:
 
 ```yaml
  - repo: https://github.com/athertonsoftware/config-compare-yaml
-    rev: v0.0.3
+    rev: v0.0.7
     hooks:
       - id: config-compare-yaml
         additional_dependencies: [pyyaml]

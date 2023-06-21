@@ -1,12 +1,13 @@
 Metadata-Version: 2.1
 Name: config-compare-yaml
-Version: 0.0.0
-Summary: Compare the projects sample config keys to developers config file.
-Home-page: https://github.com/akocs/config_compare_yaml
+Version: 0.0.7
+Summary: Compare a global config.yaml file with the developers version to make sure that the keys match during checkin
+Home-page: https://github.com/athertonsoftware/config-compare-yaml
 Author: Tony Akocs
-Author-email: tony.akocs@gmail.com
-License: MIT
-Project-URL: Bug Tracker, https://github.com/akocs/config_compare_yaml/issues
+Author-email: Tony Akocs <tony.akocs@athertonsoftware.com>
+License: LICENSE
+Project-URL: Repository, https://github.com/athertonsoftware/config-compare-yaml
+Keywords: config compare,YAML
 Classifier: Development Status :: 5 - Production/Stable
 Classifier: Intended Audience :: Developers
 Classifier: License :: OSI Approved :: MIT License
@@ -22,6 +23,8 @@ Classifier: Programming Language :: Python :: 3.8
 Classifier: Programming Language :: Python :: 3.9
 Requires-Python: >=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*
 Description-Content-Type: text/markdown
+License-File: LICENSE
+License-File: NOTICE
 
 <!--
 Copyright 2023 Tony Akocs
@@ -39,9 +42,10 @@ The developer's custom “config.yaml” file is never checked into the reposito
 the “config-sample.yaml” file is always checked into the repository. When a developer 
 makes a change to the “config.yaml” file with a new key value, they often neglect to 
 include it in the “config-sample.yaml” file. Following that, they commit all of their 
-changes to the repository. Then, when you pull down their changes and build the 
-application, you will get an error message that says "unknown property" or 
-"property not found". Config-compare is utilized to prevent this situation.
+changes to the repository. Then, when another developer pulls down their changes and 
+builds the application, the developer will get an error message that says 
+"unknown property" or "property not found". Config-compare is utilized to prevent 
+this situation.
 
 # Description:
 This pre-commit hook will compare two YAML configuration files. The comparison takes 
@@ -71,17 +75,23 @@ config-compare
 
 ## pre-commit
 If you want to run it from Github use this configuration
+If the files are not next to the .pre-commit-config.yaml file than you need to add the 
+path to file1 and file2. Do not start with a slash in the file path. 
+For Example: 
+
+    "--file1=src/config.yaml",
+    "--file2=src/config-sample.yaml",
+
 ```yaml
- - repo: https://github.com/akocs/config-compare-yaml
-    rev: main
+ - repo: https://github.com/athertonsoftware/config-compare-yaml
+    rev: v0.0.3
     hooks:
       - id: config-compare-yaml
         additional_dependencies: [pyyaml]
         always_run: true
         args:
           [
-            "--file1=config.yaml",
-            "--file2=config-sample.yaml",
+            "--file1=<path-to-file/>config.yaml",
+            "--file2=<path-to-file/>config-sample.yaml",
           ]
 ```
-
